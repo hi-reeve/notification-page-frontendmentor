@@ -4,7 +4,7 @@ import { router } from './router';
 // https://pinia.esm.dev/
 export const install: ViteSetupModule = app => {
 	const pinia = createPinia();
-	pinia.use(({ store }) => {
+	pinia.use(({ store }: { store: any }) => {
 		store.router = markRaw(router);
 	});
 	app.use(pinia);
