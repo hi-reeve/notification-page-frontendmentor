@@ -8,5 +8,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     DatePicker: typeof import('@vuepic/vue-datepicker')['DatePicker']
+    Notification: typeof import('./src/components/Notification.vue')['default']
   }
 }
