@@ -83,7 +83,7 @@ onMounted(() => {
 <template>
 	<main class="grid min-h-screen bg-blue-300 place-content-center">
 		<section
-			class="max-w-5xl px-4 shadow-lg max-h-[80vh] overflow-auto rounded bg-white"
+			class="lg:max-w-5xl px-4 shadow-lg lg:max-h-[80vh] lg:overflow-auto rounded bg-white"
 		>
 			<header class="flex items-center w-full py-8">
 				<p class="flex items-center space-x-2 text-2xl font-bold">
