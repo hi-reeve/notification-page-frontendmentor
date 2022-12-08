@@ -12,7 +12,7 @@ const notificationTime = computed(() =>
 
 <template>
 	<article
-		class="p-2 rounded cursor-pointer hover:bg-neutral-200"
+		class="p-2 transition-all duration-300 ease-in-out rounded cursor-pointer hover:bg-neutral-light-grayish-blue-3"
 		:class="{
 			'bg-neutral-light-grayish-blue-3': !notification.isRead,
 		}"
@@ -59,12 +59,12 @@ const notificationTime = computed(() =>
 						class="w-12 h-12 rounded md:ml-auto"
 					/>
 				</div>
-				<p class="text-sm text-neutral-light-grayish-blue-3">
-					{{ notificationTime }}
+				<p class="text-sm text-neutral-grayish-blue">
+					{{ notificationTime }} ago
 				</p>
 				<p
 					v-if="'content' in notification.content"
-					class="p-4 text-sm border rounded text-neutral-grayish-blue border-neutral-400"
+					class="p-4 text-sm border rounded text-neutral-grayish-blue border-neutral-400 lg:mt-4"
 				>
 					{{ notification.content.content }}
 				</p>

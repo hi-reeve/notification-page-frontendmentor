@@ -81,27 +81,37 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="px-4">
-		<header class="flex items-center w-full py-8">
-			<p class="flex items-center space-x-2 text-2xl font-bold">
-				<span>Notifications</span>
-				<span
-					class="inline-block w-8 text-lg font-normal text-center text-white align-middle rounded bg-primary-blue"
-					>{{ notifications.length }}</span
+	<main class="grid min-h-screen bg-blue-300 place-content-center">
+		<section
+			class="max-w-5xl px-4 shadow-lg max-h-[80vh] overflow-auto rounded bg-white"
+		>
+			<header class="flex items-center w-full py-8">
+				<p class="flex items-center space-x-2 text-2xl font-bold">
+					<span>Notifications</span>
+					<span
+						class="inline-block w-8 text-lg font-normal text-center text-white align-middle rounded bg-primary-blue"
+						>{{ notifications.length }}</span
+					>
+				</p>
+				<button
+					type="button"
+					class="ml-auto text-neutral-dark-grayish-blue"
+					@click="markAllAsRead"
 				>
-			</p>
-			<button
-				type="button"
-				class="ml-auto text-neutral-dark-grayish-blue"
-				@click="markAllAsRead"
-			>
-				Mark all as read
-			</button>
-		</header>
-		<ul class="space-y-4">
-			<li v-for="notification in notifications" :key="notification.id">
-				<Notification :notification="notification" @read="markRead" />
-			</li>
-		</ul>
-	</section>
+					Mark all as read
+				</button>
+			</header>
+			<ul class="space-y-4">
+				<li
+					v-for="notification in notifications"
+					:key="notification.id"
+				>
+					<Notification
+						:notification="notification"
+						@read="markRead"
+					/>
+				</li>
+			</ul>
+		</section>
+	</main>
 </template>
