@@ -16,6 +16,7 @@ module.exports = {
 	],
 	rules: {
 		'vue/multi-word-component-names': ['off'],
+		'vuejs-accessibility/no-static-element-interactions' : ['off']
 	},
 	parserOptions: {
 		ecmaVersion: 'latest',

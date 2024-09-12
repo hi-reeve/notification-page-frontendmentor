@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Notification, NotificationContent } from '@/types/notification';
 import { notificationType } from '@/types/notification';
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 const notifications = ref<Notification[]>([]);
 
@@ -16,7 +16,7 @@ const generateNotification = () => {
 		if (type === 'comment-photo')
 			content = {
 				text: 'commented on your picture',
-				image: faker.image.abstract(),
+				image: faker.image.avatarGitHub(),
 			};
 		else if (type === 'comment-post')
 			content = {
@@ -26,12 +26,12 @@ const generateNotification = () => {
 		else if (type === 'join-group')
 			content = {
 				text: 'has joined your group',
-				groupName: faker.company.bs(),
+				groupName: faker.company.buzzPhrase(),
 			};
 		else if (type === 'left-group')
 			content = {
 				text: 'left the group',
-				groupName: faker.company.bs(),
+				groupName: faker.company.buzzVerb(),
 			};
 		else if (type === 'react')
 			content = {
@@ -45,11 +45,11 @@ const generateNotification = () => {
 			};
 
 		notifications.value.push({
-			id: faker.random.alphaNumeric(10),
-			name: faker.name.fullName(),
-			avatar: faker.image.avatar(),
+			id: faker.string.nanoid(),
+			name: faker.person.fullName(),
+			avatar: faker.image.avatarGitHub(),
 			isRead: faker.datatype.boolean(),
-			created_at: faker.date.recent(90).getTime(),
+			created_at: faker.date.recent({days : 90}).getTime(),
 			type,
 			content,
 		});
